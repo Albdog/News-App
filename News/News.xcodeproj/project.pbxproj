@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3F9B9C1AF733287992DACB0F /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD37D2D08DF3AB95B8503E1 /* Pods_News.framework */; };
+		5135053B2302D0EB00ABDF88 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135053A2302D0EB00ABDF88 /* NewsTableViewController.swift */; };
 		518688B92302C7D40092A518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518688B82302C7D40092A518 /* AppDelegate.swift */; };
-		518688BB2302C7D40092A518 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518688BA2302C7D40092A518 /* ViewController.swift */; };
 		518688BE2302C7D40092A518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518688BC2302C7D40092A518 /* Main.storyboard */; };
 		518688C12302C7D40092A518 /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 518688BF2302C7D40092A518 /* News.xcdatamodeld */; };
 		518688C32302C7D60092A518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 518688C22302C7D60092A518 /* Assets.xcassets */; };
@@ -17,9 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5135053A2302D0EB00ABDF88 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/joaquinjacinto/Documents/Xcode/News/News/News/Controllers/NewsTableViewController.swift; sourceTree = "<group>"; };
 		518688B52302C7D40092A518 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		518688B82302C7D40092A518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		518688BA2302C7D40092A518 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		518688BD2302C7D40092A518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		518688C02302C7D40092A518 /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
 		518688C22302C7D60092A518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		513505392302CD5B00ABDF88 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5135053A2302D0EB00ABDF88 /* NewsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		518688AC2302C7D40092A518 = {
 			isa = PBXGroup;
 			children = (
@@ -63,8 +71,8 @@
 		518688B72302C7D40092A518 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				513505392302CD5B00ABDF88 /* Controllers */,
 				518688B82302C7D40092A518 /* AppDelegate.swift */,
-				518688BA2302C7D40092A518 /* ViewController.swift */,
 				518688BC2302C7D40092A518 /* Main.storyboard */,
 				518688C22302C7D60092A518 /* Assets.xcassets */,
 				518688C42302C7D60092A518 /* LaunchScreen.storyboard */,
@@ -80,7 +88,6 @@
 				E1C57629984580D24486D681 /* Pods-News.debug.xcconfig */,
 				DB0CF9A6793C315FF8C5ACF8 /* Pods-News.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,9 +214,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				518688BB2302C7D40092A518 /* ViewController.swift in Sources */,
 				518688C12302C7D40092A518 /* News.xcdatamodeld in Sources */,
 				518688B92302C7D40092A518 /* AppDelegate.swift in Sources */,
+				5135053B2302D0EB00ABDF88 /* NewsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
