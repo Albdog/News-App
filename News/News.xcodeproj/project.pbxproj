@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3F9B9C1AF733287992DACB0F /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD37D2D08DF3AB95B8503E1 /* Pods_News.framework */; };
 		5135053B2302D0EB00ABDF88 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135053A2302D0EB00ABDF88 /* NewsTableViewController.swift */; };
+		5135053D2302D15C00ABDF88 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135053C2302D15C00ABDF88 /* NewsTableViewCell.swift */; };
+		5135053F2302D19400ABDF88 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135053E2302D19400ABDF88 /* DetailViewController.swift */; };
 		518688B92302C7D40092A518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518688B82302C7D40092A518 /* AppDelegate.swift */; };
 		518688BE2302C7D40092A518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518688BC2302C7D40092A518 /* Main.storyboard */; };
 		518688C12302C7D40092A518 /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 518688BF2302C7D40092A518 /* News.xcdatamodeld */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		5135053A2302D0EB00ABDF88 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/joaquinjacinto/Documents/Xcode/News/News/News/Controllers/NewsTableViewController.swift; sourceTree = "<group>"; };
+		5135053C2302D15C00ABDF88 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = ../../../../../../../../System/Volumes/Data/Users/joaquinjacinto/Documents/Xcode/News/News/News/Controllers/NewsTableViewCell.swift; sourceTree = "<group>"; };
+		5135053E2302D19400ABDF88 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/joaquinjacinto/Documents/Xcode/News/News/News/Controllers/DetailViewController.swift; sourceTree = "<group>"; };
 		518688B52302C7D40092A518 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		518688B82302C7D40092A518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		518688BD2302C7D40092A518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				5135053A2302D0EB00ABDF88 /* NewsTableViewController.swift */,
+				5135053C2302D15C00ABDF88 /* NewsTableViewCell.swift */,
+				5135053E2302D19400ABDF88 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +222,8 @@
 			files = (
 				518688C12302C7D40092A518 /* News.xcdatamodeld in Sources */,
 				518688B92302C7D40092A518 /* AppDelegate.swift in Sources */,
+				5135053F2302D19400ABDF88 /* DetailViewController.swift in Sources */,
+				5135053D2302D15C00ABDF88 /* NewsTableViewCell.swift in Sources */,
 				5135053B2302D0EB00ABDF88 /* NewsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
