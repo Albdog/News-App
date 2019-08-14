@@ -66,8 +66,10 @@ class NewsTableViewController: UITableViewController {
         
         cell.newsTitle.text = article["title"] as? String
         if let urlImage = article["urlToImage"] as? String {
-            print(urlImage)
-            cell.newsImage.downloaded(from: urlImage)
+            let url = URL(string: urlImage)
+            if let data = try? Data(contentsOf: url!) {
+                cell.newsImage.image = UIImage(data: data)
+            }
         }
         cell.newsDescription.text = article["description"] as? String
 
