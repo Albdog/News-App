@@ -13,31 +13,6 @@ import SwiftyJSON
 class NewsTableViewController: UITableViewController {
     
     var newsArticles = [[String:AnyObject]]()
-
-    //move to extension
-    func loadNewsArticles(completion: @escaping (JSON?) -> Void) {
-        let url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=" + "3be68be40de74b5caba36f3852414f40"
-        
-        Alamofire.request(url).responseJSON { resposeData in
-            guard resposeData.result.isSuccess, let value = resposeData.result.value else {
-                print("Error fetching news articles")
-                completion(nil)
-                return
-            }
-            
-            let swiftyJsonVar = JSON(value)
-            
-            if let resData = swiftyJsonVar["articles"].arrayObject {
-                self.newsArticles = resData as! [[String:AnyObject]]
-            }
-            
-            if self.newsArticles.count > 0 {
-                self.tableView.reloadData()
-            }
-            
-            completion(swiftyJsonVar)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,4 +97,30 @@ class NewsTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension NewsTableViewController {
+    func loadNewsArticles(completion: @escaping (JSON?) -> Void) {
+        let url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=" + "3be68be40de74b5caba36f3852414f40"
+        
+        Alamofire.request(url).responseJSON { resposeData in
+            guard resposeData.result.isSuccess, let value = resposeData.result.value else {
+                print("Error fetching news articles")
+                completion(nil)
+                return
+            }
+            
+            let swiftyJsonVar = JSON(value)
+            
+            if let resData = swiftyJsonVar["articles"].arrayObject {
+                self.newsArticles = resData as! [[String:AnyObject]]
+            }
+            
+            if self.newsArticles.count > 0 {
+                self.tableView.reloadData()
+            }
+            
+            completion(swiftyJsonVar)
+        }
+    }
 }
