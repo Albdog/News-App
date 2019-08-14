@@ -40,7 +40,11 @@ class NewsTableViewController: UITableViewController {
         
         var article = newsArticles[indexPath.row]
         
-        cell.newsTitle.text = article["title"] as? String
+        if let title = article["title"] as? String {
+            cell.newsTitle.text = title
+        } else {
+            cell.newsTitle.text = "No title."
+        }
         
         if let urlImage = article["urlToImage"] as? String {
             let url = URL(string: urlImage)
