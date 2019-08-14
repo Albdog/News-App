@@ -13,13 +13,13 @@
         <!--News-->
         <scene sceneID="hIZ-Ot-AwE">
             <objects>
-                <tableViewController id="b2i-Cs-piN" sceneMemberID="viewController">
+                <tableViewController id="b2i-Cs-piN" customClass="NewsTableViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r4E-vT-BKm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="204" id="4LB-5X-H15">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsViewCell" rowHeight="204" id="4LB-5X-H15" customClass="NewsTableViewCell" customModule="News" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="204"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4LB-5X-H15" id="gX6-dC-oVc">
@@ -59,6 +59,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="newsDescription" destination="uj5-uo-dM3" id="apL-S3-WNa"/>
+                                    <outlet property="newsImage" destination="c9N-FF-Njj" id="YVQ-jH-0g2"/>
+                                    <outlet property="newsTitle" destination="tnV-9V-qef" id="5WI-po-wap"/>
                                     <segue destination="fGX-7A-oKr" kind="show" id="uXq-nP-KjI"/>
                                 </connections>
                             </tableViewCell>
@@ -76,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1068" y="70.614692653673174"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="S7y-vL-pUR">
             <objects>
-                <viewController id="fGX-7A-oKr" sceneMemberID="viewController">
+                <viewController id="fGX-7A-oKr" customClass="DetailViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gNd-JX-3Gp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
