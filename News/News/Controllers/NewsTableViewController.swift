@@ -63,16 +63,24 @@ class NewsTableViewController: UITableViewController {
 
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let detailViewController = segue.destination as? DetailViewController else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+        guard let selectedNewsCell = sender as? NewsTableViewCell else {
+            fatalError("Unexpected sender: \(String(describing: sender))")
+        }
+        guard let indexPath = tableView.indexPath(for: selectedNewsCell) else {
+            fatalError("The selected cell is not being displayed by the table")
+        }
+        
+        var article = newsArticles[indexPath.row]
+        
+        if let webURL = article["url"] as? String {
+            detailViewController.webURL = webURL
+        }
     }
-    */
 
 }
 
