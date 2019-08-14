@@ -21,8 +21,9 @@ class NewsTableViewController: UITableViewController {
     }
 
     @IBAction func reloadPressed(_ sender: Any) {
+        newsArticles.removeAll()
+        tableView.reloadData()
         loadNewsArticles { (JSON) in }
-        print("reload pressed")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
