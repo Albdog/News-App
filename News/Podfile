@@ -6,6 +6,7 @@ target 'News' do
   use_frameworks!
 
   # Pods for News
-  pod 'Alamofire', '~> 5.0.0-beta5'
+  pod 'Alamofire', '~> 4.7.0'
+  pod 'SwiftyJSON'
 
 end
