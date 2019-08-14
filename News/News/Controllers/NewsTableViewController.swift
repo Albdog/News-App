@@ -13,27 +13,30 @@ import SwiftyJSON
 class NewsTableViewController: UITableViewController {
     
     var newsArticles = [[String:AnyObject]]()
+    var activityIndicatorView: UIActivityIndicatorView!
+    
+    override func loadView() {
+        super.loadView()
+        
+        activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        
+        tableView.backgroundView = activityIndicatorView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadNewsArticles { (JSON) in }
     }
-
-    @IBAction func reloadPressed(_ sender: Any) {
-        newsArticles.removeAll()
-        tableView.reloadData()
-        loadNewsArticles { (JSON) in }
-    }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsArticles.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsViewCell", for: indexPath) as? NewsTableViewCell  else {
             fatalError("The dequeued cell is not an instance of NewsViewCell.")
@@ -61,7 +64,7 @@ class NewsTableViewController: UITableViewController {
         } else {
             cell.newsDescription.text = "No description."
         }
-
+        
         return cell
     }
     
@@ -83,11 +86,19 @@ class NewsTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func reloadPressed(_ sender: Any) {
+        newsArticles.removeAll()
+        tableView.reloadData()
+        loadNewsArticles { (JSON) in }
+    }
 }
 
 extension NewsTableViewController {
     func loadNewsArticles(completion: @escaping (JSON?) -> Void) {
         let url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=" + "3be68be40de74b5caba36f3852414f40"
+        
+        activityIndicatorView.startAnimating()
+        tableView.separatorStyle = .none
         
         Alamofire.request(url).responseJSON { resposeData in
             guard resposeData.result.isSuccess, let value = resposeData.result.value else {
@@ -103,11 +114,12 @@ extension NewsTableViewController {
             }
             
             if self.newsArticles.count > 0 {
+                self.activityIndicatorView.stopAnimating()
+                self.tableView.separatorStyle = .singleLine
                 self.tableView.reloadData()
             }
             
             completion(swiftyJsonVar)
         }
     }
-    
 }
